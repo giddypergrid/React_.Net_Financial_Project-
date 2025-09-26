@@ -1,0 +1,49 @@
+.default-header {
+    display: flex;
+    flex-shrink: 0;
+    height: 100px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.default-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background-color: #f0f0f0;
+    z-index: 0;
+}
+
+.data-block {
+    background: transparent;
+    border-right: 2px solid #d3dce0;
+    flex-basis: var(--company-header-tile-width);
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.label {
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}

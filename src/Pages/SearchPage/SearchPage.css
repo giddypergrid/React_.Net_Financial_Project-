@@ -1,0 +1,19 @@
+.search-page {
+    min-height: 100vh;
+    background-color: #f8fafc;
+  }
+  
+  .search-page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .error-message {
+    color: #dc2626;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-weight: 500;
+  }
+  

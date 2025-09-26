@@ -1,0 +1,27 @@
+/* Global: No scrolling by default */
+body {
+    overflow: hidden;
+}
+
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.App .app-content {
+    flex: 1;
+}
+
+/* Hover-to-scroll areas */
+.scrollable-area-vertical {
+    overflow: vertical;
+}
+
+.scrollable-area-horizontal {
+    overflow: horizontal;
+}
+
+.scrollable-area {
+    overflow: auto;
+}
