@@ -2,7 +2,7 @@ import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
 import './SearchPage.css';
 import CardList from 'Components/Card/CardList';
 import { CompanySearch2 } from 'Types/company';
-import { searchCompanies } from 'api';
+import { searchCompanies } from 'Api/api';
 import PortfolioList from 'Components/Portfolio/PortfolioList';
 import SearchBar from 'Components/SearchBar/SearchBar';
 type Props = {}

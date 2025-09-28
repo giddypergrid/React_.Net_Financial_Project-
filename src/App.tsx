@@ -4,6 +4,7 @@ import './App.css';
 import './Globalcss.css';
 import Navibar from './Components/Navibar/Navibar';
 import { setOriginalWindowSize } from 'Utils/windowSize';
+import OverlayMessageBoard from 'Components/Modal/OverlayMessageBoard';
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
       <div className="app-content">
         <Outlet />
       </div>
+      <OverlayMessageBoard />
     </div>
   );
 }
