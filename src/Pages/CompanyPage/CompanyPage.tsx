@@ -1,29 +1,28 @@
-import { getCompanyProfile } from 'api';
+import { getCompanyProfile } from 'Api/api';
 import { CompanyProfile } from 'Types/company';
 import React, { useEffect, useState } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
 import SideBar from './SideBar';
 import Spinner from 'Components/Spinner/Spinner';
-import DefaultHeader from './DefaultHeader';
+import DefaultHeader from './DefaultHeader/DefaultHeader';
 import './CompanyPage.css';
+import PeersSection from './PeersSection/PeersSection';
+import check_response from 'Api/apiProcess';
 
 function CompanyPage() {
   const { symbol } = useParams<{ symbol: string }>();
   const [companyProfile, setcompanyProfile] = useState<CompanyProfile[]>();
-  const [apiRequestError, setApiRequestError] = useState<string>('');
   useEffect(() => {
     const fetchCompanyProfile = async () => {
       const response = symbol ? await getCompanyProfile(symbol) : null;
-      if (typeof response === 'string') {
-        setApiRequestError(response);
-      }
-      else{
+      const isValid = response ? check_response(response, symbol) : false;
+      if (isValid && response && typeof response !== 'string') {
         setcompanyProfile(response?.data);
       }
 
     }
     fetchCompanyProfile();
-  }, []);
+  }, [symbol]);
 
   return (
     <div className="company-page-container" style={{display: 'flex'}}>
@@ -32,6 +31,7 @@ function CompanyPage() {
           <SideBar />
           <div className="company-page-content">
             <DefaultHeader data={companyProfile[0]} />
+            {symbol && <PeersSection symbol={symbol} />}
             <div className="outlet-content">
               <Outlet context={{ symbol }} />
             </div>

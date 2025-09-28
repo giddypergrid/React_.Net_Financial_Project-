@@ -1,0 +1,20 @@
+.peers-symbol-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+}
+
+.peer-symbol-button {
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #adb3ba;
+    color: white;
+    border: 1px solid #8b9bac;
+    transition: all 0.2s ease;
+    min-width: 80px;
+    text-align: center;
+}
