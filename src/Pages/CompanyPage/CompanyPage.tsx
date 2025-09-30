@@ -8,6 +8,7 @@ import DefaultHeader from './DefaultHeader/DefaultHeader';
 import './CompanyPage.css';
 import PeersSection from './PeersSection/PeersSection';
 import check_response from 'Api/apiProcess';
+import TenKSection from './TenKSection/TenKSection';
 
 function CompanyPage() {
   const { symbol } = useParams<{ symbol: string }>();
@@ -31,7 +32,11 @@ function CompanyPage() {
           <SideBar />
           <div className="company-page-content">
             <DefaultHeader data={companyProfile[0]} />
-            {symbol && <PeersSection symbol={symbol} />}
+            <div className='peers-and-tenk-section'>
+              {symbol && <PeersSection symbol={symbol} />}
+              {symbol && <TenKSection symbol={symbol} />}
+            </div>
+
             <div className="outlet-content">
               <Outlet context={{ symbol }} />
             </div>
