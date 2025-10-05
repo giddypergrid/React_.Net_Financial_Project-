@@ -22,12 +22,16 @@ const PeersSection = ({symbol}: Props) => {
   }, [symbol]);
 
   return (
-    <div className='peers-symbol-section'>
-        {peers && peers?.map((peer) => 
-        currentPage&&<Link to={`/company/${peer}/${currentPage}`} type='button' key={peer} className='peer-symbol-button'>
-            {peer}
-        </Link>)}
+    <div className='peers-section-container'>
+      <h2 style={{margin: '0 0 0 0', paddingLeft: '10px'}}>PEER SYMBOLS</h2>
+      <div className='peers-symbol-section'>
+          {peers && peers?.map((peer) => 
+          currentPage&&<Link to={`/company/${peer}/${currentPage}`} type='button' key={peer} className='peer-symbol-button'>
+              {peer}
+          </Link>)}
+      </div>
     </div>
+
   )
 }
 

@@ -1,24 +1,20 @@
-.peers-symbol-section {
+.tenk-link-button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
     padding: 10px;
 }
-
-.peer-symbol-button {
+.tenk-link-button {
     border-radius: 3px;
+    padding: 0 5px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-decoration: none;
     cursor: pointer;
     background-color: #adb3ba;
     color: white;
-    border: 1px solid #8b9bac;
-    transition: all 0.2s ease;
-    min-width: 80px;
-    text-align: center;
 }
-.peers-section-container {
+.tenk-section-container {
     padding: 5px;
     border-left: 2px solid #ddd;
     border-bottom: 2px solid #ddd;
